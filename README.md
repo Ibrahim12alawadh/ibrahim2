@@ -40,7 +40,7 @@ class _UserNamePageState extends State<UserNamePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Enter Your Name'),
+        title: Text('ادخل اسمك'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -50,7 +50,7 @@ class _UserNamePageState extends State<UserNamePage> {
             TextField(
               controller: _nameController,
               decoration: InputDecoration(
-                labelText: 'Your Name',
+                labelText: 'الأسم',
               ),
             ),
             SizedBox(height: 20),
@@ -66,7 +66,7 @@ class _UserNamePageState extends State<UserNamePage> {
                   );
                 }
               },
-              child: Text('Start Game'),
+              child: Text('حفظ'),
             ),
           ],
         ),
@@ -110,7 +110,7 @@ class _MathGameStartState extends State<MathGameStart> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(widget.userName),
-            Text('👤'),
+            Text('👤  '),
           ],
         ),
       ),
@@ -118,7 +118,7 @@ class _MathGameStartState extends State<MathGameStart> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Select Math Operation:'),
+            Text('إختر'),
             DropdownButton<MathOperation>(
               value: selectedOperation,
               onChanged: (MathOperation? value) {
@@ -146,13 +146,13 @@ class _MathGameStartState extends State<MathGameStart> {
                   );
                 }
               },
-              child: Text('Start Game'),
+              child: Text('بدء اللعبة'),
             ),
             ElevatedButton(
               onPressed: () {
                 resetGame();
               },
-              child: Text('Reset Game'),
+              child: Text('إعادة التقدم'),
             ),
           ],
         ),
@@ -316,15 +316,15 @@ class _MathGameState extends State<MathGame> {
                         }).toList(),
                       ),
                       SizedBox(height: 20),
-                      Text('Question: $i / $totalQuestions'),
-                      Text('Score: $score / 100'),
+                      Text('الإجابات: $i / $totalQuestions'),
+                      Text('النقاط: $score / 100'),
                     ],
                   )
                 : ElevatedButton(
                     onPressed: () {
                       showResultDialog();
                     },
-                    child: Text('Show Result'),
+                    child: Text('الصفحه الرئيسية'),
                   ),
           ],
         ),
@@ -368,13 +368,13 @@ class _MathGameState extends State<MathGame> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Icon(Icons.check, color: Colors.green, size: 50),
-          content: Text('Correct Answer!'),
+          content: Text('إجابة صحيحه'),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('OK'),
+              child: Text('اكمل'),
             ),
           ],
         );
@@ -387,15 +387,15 @@ class _MathGameState extends State<MathGame> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Wrong Answer'),
-          content: Text('Try again'),
+          title: Text('X'),
+          content: Text('إجابة خاطئة'),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
                 _proceedToNextQuestion();
               },
-              child: Text('OK'),
+              child: Text('اكمل'),
             ),
           ],
         );
@@ -409,13 +409,13 @@ class _MathGameState extends State<MathGame> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Quiz Result'),
+          title: Text('النتائج'),
           content: Column(
             children: [
-              Text('Correct Answers: $correctAnswers'),
-              Text('Incorrect Answers: ${totalQuestions - correctAnswers}'),
-              Text('Score: $score / 100'),
-              Text('Grade: $grade'),
+              Text('الإجابات الصحيحة: $correctAnswers'),
+              Text('الإجابات الخاطئة: ${totalQuestions - correctAnswers}'),
+              Text('النقاط: $score / 100'),
+              Text('الدرجة: $grade'),
             ],
           ),
           actions: [
@@ -424,7 +424,7 @@ class _MathGameState extends State<MathGame> {
                 Navigator.of(context).pop();
                 Navigator.of(context).pop();
               },
-              child: Text('OK'),
+              child: Text('أكمل'),
             ),
           ],
         );
@@ -477,6 +477,7 @@ class _MathGameState extends State<MathGame> {
     }
   }
 }
+
 
 
 الاكواد التي تكتب في ملف-->pubspec.yaml
